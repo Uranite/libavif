@@ -102,7 +102,7 @@ else()
         set(CONFIG_ML_PART_SPLIT 0 CACHE INTERNAL "")
     else()
         FetchContent_Declare(
-            libaom URL "https://aomedia.googlesource.com/aom/+archive/${AVIF_LOCAL_AOM_GIT_TAG}.tar.gz" BINARY_DIR
+            libaom URL "https://gitlab.com/damian101/aom-psy101/+archive/${AVIF_LOCAL_AOM_GIT_TAG}.tar.gz" BINARY_DIR
                        "${AOM_BINARY_DIR}" UPDATE_COMMAND ""
         )
     endif()
