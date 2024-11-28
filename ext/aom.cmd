@@ -9,7 +9,7 @@
 : #     "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvars64.bat"
 
 git clone https://aomedia.googlesource.com/aom
-git -C aom checkout v3.12.0-4-g65ddc22823
+git -C aom checkout 20f697ad51150492534c48e8a214d8192d7e150b
 
 cmake -G Ninja -S aom -B aom/build.libavif -DBUILD_SHARED_LIBS=OFF -DCONFIG_PIC=1 -DCMAKE_BUILD_TYPE=Release -DENABLE_DOCS=0 -DENABLE_EXAMPLES=0 -DENABLE_TESTDATA=0 -DENABLE_TESTS=0 -DENABLE_TOOLS=0
 cmake --build aom/build.libavif --config Release --parallel
