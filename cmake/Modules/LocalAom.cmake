@@ -1,4 +1,3 @@
-set(AVIF_AOM_GIT_TAG v3.11.0)
 set(AVIF_AVM_GIT_TAG research-v8.1.0)
 
 if(AVIF_CODEC_AVM)
@@ -102,7 +101,7 @@ else()
         set(CONFIG_ML_PART_SPLIT 0 CACHE INTERNAL "")
     else()
         FetchContent_Declare(
-            libaom URL "https://aomedia.googlesource.com/aom/+archive/${AVIF_AOM_GIT_TAG}.tar.gz" BINARY_DIR "${AOM_BINARY_DIR}"
+            libaom URL "https://aomedia.googlesource.com/aom/+archive/refs/heads/main.tar.gz" BINARY_DIR "${AOM_BINARY_DIR}"
             UPDATE_COMMAND ""
         )
     endif()
