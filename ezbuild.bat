@@ -15,7 +15,7 @@ for %%d in (build) do (
     )
 )
 
-for %%d in (SVT-AV1 aom libjpeg-turbo libwebp libxml2 libyuv zlib libpng) do (
+for %%d in (SVT-AV1 aom libjpeg-turbo libwebp libxml2 libyuv zlib libpng libargparse) do (
     if exist "ext\%%d" (
         rmdir /s /q "ext\%%d"
         if errorlevel 1 goto error
@@ -35,6 +35,8 @@ if errorlevel 1 goto error
 call libjpeg.cmd
 if errorlevel 1 goto error
 call zlibpng.cmd
+if errorlevel 1 goto error
+call libargparse.cmd
 if errorlevel 1 goto error
 call aom.cmd
 if errorlevel 1 goto error
