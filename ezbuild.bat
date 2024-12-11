@@ -50,9 +50,11 @@ if errorlevel 1 goto error
 goto end
 
 :error
-echo An error occurred. Exiting the script.
-exit /b 1
+echo An error occurred. Pausing the script.
+pause
+
+goto end
 
 :end
 echo Script completed successfully.
-exit /b 0
+pause
