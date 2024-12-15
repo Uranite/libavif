@@ -1,6 +1,10 @@
 set(AVIF_LOCAL_LIBSHARPYUV_GIT_TAG v1.4.0)
 
-set(LIB_FILENAME "${CMAKE_CURRENT_SOURCE_DIR}/ext/libwebp/build/libsharpyuv${CMAKE_STATIC_LIBRARY_SUFFIX}")
+if(WIN32 AND CMAKE_C_COMPILER_ID MATCHES "Clang" AND CMAKE_GENERATOR MATCHES "Ninja")
+    set(LIB_FILENAME "${CMAKE_CURRENT_SOURCE_DIR}/ext/libwebp/build/sharpyuv${CMAKE_STATIC_LIBRARY_SUFFIX}")
+else()
+    set(LIB_FILENAME "${CMAKE_CURRENT_SOURCE_DIR}/ext/libwebp/build/${CMAKE_STATIC_LIBRARY_PREFIX}sharpyuv${CMAKE_STATIC_LIBRARY_SUFFIX}")
+endif()
 if(EXISTS "${LIB_FILENAME}")
     message(STATUS "libavif(AVIF_LIBSHARPYUV=LOCAL): compiled library found at ${LIB_FILENAME}")
     add_library(sharpyuv::sharpyuv STATIC IMPORTED GLOBAL)
