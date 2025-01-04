@@ -8,6 +8,7 @@
 git clone -b v2.13.5 --depth 1 https://github.com/GNOME/libxml2.git
 
 mkdir -p libxml2/build.libavif
-cmake libxml2 -B libxml2/build.libavif/ -G Ninja -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=libxml2/install.libavif -DLIBXML2_WITH_PYTHON=OFF -DLIBXML2_WITH_ZLIB=OFF -DLIBXML2_WITH_LZMA=OFF -DLIBXML2_WITH_ICONV=OFF -DLIBXML2_WITH_TESTS=OFF -DLIBXML2_WITH_PROGRAMS=OFF
+cmake libxml2 -B libxml2/build.libavif/ -G Ninja -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=libxml2/install.libavif \
+    -DLIBXML2_WITH_PYTHON=OFF -DLIBXML2_WITH_ZLIB=OFF -DLIBXML2_WITH_LZMA=OFF
 ninja -C libxml2/build.libavif
 ninja -C libxml2/build.libavif install

@@ -1,10 +1,6 @@
 set(AVIF_LOCAL_LIBXML_GIT_TAG "v2.13.5")
 
-if(WIN32 AND CMAKE_C_COMPILER_ID MATCHES "Clang" AND CMAKE_GENERATOR MATCHES "Ninja")
-    set(LIB_FILENAME "${AVIF_SOURCE_DIR}/ext/libxml2/install.libavif/lib/${AVIF_LIBRARY_PREFIX}libxml2${CMAKE_STATIC_LIBRARY_SUFFIX}")
-else()
-    set(LIB_FILENAME "${AVIF_SOURCE_DIR}/ext/libxml2/install.libavif/lib/${AVIF_LIBRARY_PREFIX}xml2${CMAKE_STATIC_LIBRARY_SUFFIX}")
-endif()
+set(LIB_FILENAME "${AVIF_SOURCE_DIR}/ext/libxml2/install.libavif/lib/${AVIF_LIBRARY_PREFIX}xml2${CMAKE_STATIC_LIBRARY_SUFFIX}")
 if(EXISTS "${LIB_FILENAME}")
     message(STATUS "libavif(AVIF_LIBXML2=LOCAL): compiled library found at ${LIB_FILENAME}")
     add_library(LibXml2 STATIC IMPORTED GLOBAL)
