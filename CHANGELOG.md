@@ -27,6 +27,7 @@ The changes are relative to the previous release, unless the baseline is specifi
 * Fix grayscale conversion when changing the bit depth.
 * Bump cmake_minimum_required from 3.13 to 3.22
 * Associate transformative properties with alpha auxiliary image items.
+* Use AOM_TUNE_IQ by default when possible.
 
 ### Removed since 1.3.0
 
