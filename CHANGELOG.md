@@ -32,6 +32,9 @@ The changes are relative to the previous release, unless the baseline is specifi
 * Always forward the CICP color primaries, transfer characteristics,
   and matrix coefficients to the AV1 encoder, which writes them in the Sequence
   Header OBU, for compatibility with libraries that wrongly ignore the colr box.
+* Use AOM_TUNE_IQ by default when encoding luma and chroma with libaom.
+* Use AOM_TUNE_PSNR by default when encoding alpha with libaom.
+* Set tuning before applying the user-provided specific aom codec options.
 
 ### Removed since 1.3.0
 
