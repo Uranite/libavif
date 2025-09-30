@@ -17,6 +17,10 @@ set CC=clang
 set CXX=clang
 
 cd ext
+
+set "CFLAGS=-march=znver2"
+set "CXXFLAGS=-march=znver2"
+
 call dav1d.cmd
 cd ..
 
