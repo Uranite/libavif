@@ -2,7 +2,9 @@ set(AVIF_JPEG_TAG "3.1.3")
 
 add_library(JPEG::JPEG STATIC IMPORTED GLOBAL)
 
-if(MSVC)
+if(WIN32 AND CMAKE_C_COMPILER_ID MATCHES "Clang" AND CMAKE_GENERATOR MATCHES "Ninja")
+    set(JPEG_STATIC_SUFFIX "-static")
+elseif(MSVC)
     set(JPEG_STATIC_SUFFIX "-static")
 else()
     set(JPEG_STATIC_SUFFIX "")
