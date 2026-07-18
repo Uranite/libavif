@@ -226,6 +226,12 @@ static avifResult svtCodecEncodeImage(avifCodec * codec,
             svt_config->intra_period_length = encoder->keyframeInterval - 1;
         }
 
+#if SVT_AV1_CHECK_VERSION(3, 1, 3)
+        if (!alpha && (addImageFlags & AVIF_ADD_IMAGE_FLAG_SINGLE) != 0 && quality != AVIF_QUALITY_LOSSLESS) {
+            svt_config->tune = 3;
+        }
+#endif
+
 #if SVT_AV1_CHECK_VERSION(0, 9, 1)
         for (uint32_t i = 0; i < codec->csOptions->count; ++i) {
             const avifCodecSpecificOption * entry = &codec->csOptions->entries[i];
